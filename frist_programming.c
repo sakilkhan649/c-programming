@@ -46,6 +46,7 @@ int main(){
     return 0;
 }
 */
+/*
 #include <stdio.h>
 int main(){
     int a;
@@ -57,5 +58,53 @@ int main(){
     scanf("%d",&b);
     adition=a-b;
     printf("Result = %d",adition);
+    return 0;
+}
+*/
+/*
+#include <stdio.h>
+int main(){
+    int x;
+    printf("Enter value of x:");
+    scanf("%d",&x);
+    if(x>=0){
+        printf("Positive Number");
+    }else{
+        printf("Nagative Number");
+    }
+    return 0;
+}
+*/
+/*
+#include <stdio.h>
+int main(){
+    int i;
+    for(i=1; i<=5;i++){
+        printf("%d\n",i);
+    }
+    return 0;
+}
+*/
+/*
+#include <stdio.h>
+int main(){
+    int i;
+    for(i=2; i<=100;i=i+2){
+
+        printf("%d\n",i);
+    }
+    return 0;
+}
+*/
+#include <stdio.h>
+int main(){
+    int i;
+    for(i=1;i<=10;i++){
+        if(i%2==0){
+            printf("Even number %d\n",i);
+        }else{
+            printf("Odd number %d\n",i);
+        }
+    }
     return 0;
 }
