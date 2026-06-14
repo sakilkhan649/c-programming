@@ -165,6 +165,7 @@ int main(){
     return 0;
 }
 */
+/*
 #include <stdio.h>
 int multiply(int num1,int num2){
     int result = num1 * num2;
@@ -173,11 +174,81 @@ int multiply(int num1,int num2){
 int main(){
     int n,m;
     int answer;
-    printf("Enter value of n\n:");
+    printf("Enter value of n:\n");
     scanf("%d",&n);
-    printf("Enter value of m\n:");
+    printf("Enter value of m:\n");
     scanf("%d",&m);
     answer=multiply(n,m);
     printf("Result = %d",answer);
+    return 0;
+}
+*/
+/*
+#include<stdio.h>
+int main(){
+    int x =5;// একটি সাধারণ ভেরিয়েবল
+    int *ptr;// একটি পয়েন্টার ভেরিয়েবল (নামের আগে * দিতে হয়)
+
+    ptr = &x;// x এর মেমোরি ঠিকানাটা ptr পয়েন্টারের ভেতর রেখে দিলাম
+
+    printf("Value of x = %d\n",x);// সরাসরি x এর মান প্রিন্ট (আউটপুট: 5)
+    printf("Address of x = %p\n",&x);// x এর মেমোরি ঠিকানা প্রিন্ট (%p দিয়ে অ্যাড্রেস দেখায়)
+
+    printf("Value stored in ptr  = %p\n",ptr);// ptr এর ভেতর কী আছে? (x এর ঠিকানা)
+    printf("Value at ptr address  = %p\n",*ptr);// ptr এর ভেতরের ঠিকানায় গিয়ে মান দেখা (আউটপুট: 5)
+
+    return 0;
+}
+*/
+/*
+#include<stdio.h>
+int main(){
+    int score =100;
+    int *p;
+
+    p = &score;// score এর ঠিকানা p-তে রাখা হলো
+    *p = 200;// p এর ভেতরের ঠিকানায় গিয়ে মান বদলে ২০০ করে দেওয়া হলো
+
+    printf("New score = %d\n",score);
+    return 0;
+}
+*/
+/*
+#include<stdio.h>
+// ১. এখানে আমরা 'Student' নামে আমাদের নিজস্ব একটা কাস্টম ডাটা টাইপ বানালাম
+struct Student {
+    int id;
+    float cgpa;
+    char grade;
+};
+int main(){
+    // ২. এবার Student টাইপের একটা ভেরিয়েবল বা বাক্স তৈরি করলাম, যার নাম 's1'
+    struct Student s1;
+    // ৩. ডট (.) অপারেটর ব্যবহার করে s1 এর ভেতরের ঘরগুলোতে মান বসালাম
+    s1.id = 683100;
+    s1.cgpa = 3.85;
+    s1.grade= 'A';
+
+    printf("Student ID: %d\n",s1.id);
+    printf("Student CGPA: %.2f\n",s1.cgpa);
+    printf("Student Gread: %c\n",s1.grade);
+}
+*/
+#include<stdio.h>
+struct Book {
+    int id;
+    float price;
+};
+int main(){
+    struct Book b1;
+
+    printf("Enter Book Id: \n");
+    scanf("%d",&b1.id);
+    printf("Enter Price:\n");
+    scanf("%f",&b1.price);
+
+    printf("Your Book Id:%d\n",b1.id);
+    printf("Your Book Price:%.0f\n",b1.price);
+
     return 0;
 }
