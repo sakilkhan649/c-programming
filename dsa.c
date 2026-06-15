@@ -36,6 +36,7 @@ int main(){
     return 0;
 }
 */
+/*
 #include <stdio.h>
 #define MAX 5
 
@@ -73,4 +74,40 @@ int main(){
     dequeue();
 
     return 0;
+}
+*/
+#include<stdio.h>
+#include<stdlib.h>// malloc ফাংশন ব্যবহারের জন্য এই লাইব্রেরি লাগে
+// নোডের কঙ্কাল তৈরি
+struct Node{
+   int data;
+   struct Node *next;
+};
+int main(){
+  // ১. ৩টি পয়েন্টার নিলাম যা নোডগুলোর ঠিকানা হোল্ড করবে
+  struct Node *head = NULL;
+  struct Node *second = NULL;
+  struct Node *third = NULL;
+  // ২. Dynamic Memory Allocation (malloc) দিয়ে মেমোরির 'Heap' সেকশনে ৩টি বাক্স তৈরি করলাম
+   head = (struct Node*)malloc(sizeof(struct Node));
+   second = (struct Node*)malloc(sizeof(struct Node));
+   third = (struct Node*)malloc(sizeof(struct Node));
+   // ৩. প্রথম বক্সে ডাটা রাখলাম এবং সেটির সাথে দ্বিতীয় বক্সের লিঙ্ক করালাম
+   head->data = 10;
+   head->next = second;// প্রথম বক্সকে বললাম, তোমার পরে 'second' বাক্স আছে
+   // ৪. দ্বিতীয় বক্সে ডাটা রাখলাম এবং সেটির সাথে তৃতীয় বক্সের লিঙ্ক করালাম
+   second->data = 20;
+   second->next = third;
+   // ৫. তৃতীয় বক্সে ডাটা রাখলাম এবং এটিই শেষ বক্স, তাই next-এ NULL দিলাম
+   third->data = 30;
+   third->next = NULL;
+   // ৬. এবার লিংকড লিস্টটি প্রিন্ট করে দেখার পালা
+   struct Node *temp = head;// শুরু থেকে হাঁটা শুরু করব
+   while (temp != NULL){
+    printf("%d -> ",temp->data);
+    temp = temp->next;// পরের নোডের ঠিকানায় চলে গেলাম
+   }
+   printf("NULL\n");
+   return 0;
+
 }

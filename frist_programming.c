@@ -240,6 +240,7 @@ struct Book {
     float price;
 };
 int main(){
+
     struct Book b1;
 
     printf("Enter Book Id: \n");
